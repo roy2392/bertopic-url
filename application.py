@@ -6,9 +6,9 @@ import time
 from bs4 import BeautifulSoup
 import requests
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@application.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
         url = request.form.get('url')
@@ -64,4 +64,4 @@ def home():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)
