@@ -3,7 +3,7 @@ from bertopic import BERTopic
 from bertopic.cluster import BaseCluster
 import time
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 local_model_path = 'bertopic_safetensors'
 loaded_topic_model = BERTopic.load(local_model_path)
@@ -41,4 +41,4 @@ def home():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)
