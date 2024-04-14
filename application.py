@@ -14,7 +14,7 @@ topic_info = loaded_topic_model.get_topic_info()
 topic_repr_dict = dict(zip(topic_info['Topic'], topic_info['Name']))
 
 
-@app.route('/', methods=['GET', 'POST'])
+@application.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
         webpage_text = request.form.get('url')
@@ -35,7 +35,7 @@ def home():
         else:
             took = str(took) + 's'
 
-        return render_template('results.html', topics=enumerate(topic_names), took=took)
+        return render_template('results.html', topics=dict(enumerate(topic_names)), took=took)
 
     return render_template('index.html')
 
